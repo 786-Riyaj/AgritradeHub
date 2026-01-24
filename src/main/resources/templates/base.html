@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en" th:fragment="layout(content)">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap demo</title>
+
+<link href="images/fav-icon.jpg" rel="icon">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+	crossorigin="anonymous">
+
+<!-- Bootstrap Icons & AOS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+	integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+	rel="stylesheet">
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="navbar navbar-expand-lg bg-success p-0">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#"> <img alt="image not found"
+						src="images/fav-icon.jpg" width="70px" class="ps-2">
+					</a>
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+						aria-controls="navbarNavDropdown" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavDropdown">
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item"><a class="nav-link text-white"
+								aria-current="page" href="/">Home</a></li>
+							<li class="nav-item"><a class="nav-link text-white"
+								href="/AboutUs">About Us</a></li>
+							<li class="nav-item"><a class="nav-link text-white"
+								href="/Services">Services</a></li>
+
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle text-white" href="#"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">Registration
+							</a>
+								<ul class="dropdown-menu bg-white">
+									<!-- <li><a class="dropdown-item" href="/FarmerRegistration">Farmer Registration</a></li>
+									<li><a class="dropdown-item" href="/MerchantRegistration">Merchant Registration</a></li>
+								 -->
+
+									<li><a class="dropdown-item" href="/FarmerRegistration">
+											<i class="bi bi-person-fill"></i> Farmer Registration
+									</a></li>
+									<li><a class="dropdown-item" href="/MerchantRegistration">
+											<i class="bi bi-shop"></i> Merchant Registration
+									</a></li>
+
+
+
+								</ul></li>
+							<li class="nav-item"><a class="nav-link text-white"
+								href="/ContactUs">Contact Us</a></li>
+							<li class="nav-item"><a
+								class="mx-4 text-white btn btn-danger rounded-pill"
+								href="/Login">Login Here</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<!-- Main Content Started -->
+		<div th:replace="${content}"></div>
+		<!--Main Content Ended  -->
+
+		<!-- Footer Section Start-->
+		<div class="row bg-dark mt-2">
+			<div class="col-sm-12 p-0">
+				<!-- Footer -->
+				<footer class="text-white pt-5" style="background-color: #14532d;">
+					<div class="container pb-4">
+						<div class="row g-4">
+							<!-- About -->
+							<div class="col-md-4">
+								<h5 class="fw-bold mb-3">🌾 Agritrade Hub</h5>
+								<p class="small">Connecting farmers and merchants through a
+									trusted platform for trading fresh produce, grains, and
+									agricultural goods.</p>
+								<div class="d-flex gap-3 mt-3">
+									<a href="#" class="text-white social-icon"><i
+										class="fab fa-facebook-f"></i></a> <a href="#"
+										class="text-white social-icon"><i class="fab fa-twitter"></i></a>
+									<a href="#" class="text-white social-icon"><i
+										class="fab fa-linkedin-in"></i></a> <a href="#"
+										class="text-white social-icon"><i class="fab fa-instagram"></i></a>
+								</div>
+							</div>
+
+							<!-- Quick Links -->
+							<div class="col-md-4">
+								<h5 class="fw-bold mb-3">Quick Links</h5>
+								<ul class="list-unstyled small">
+									<li class="mb-2"><a href="#home" class="footer-link">Home</a></li>
+									<li class="mb-2"><a href="#about" class="footer-link">About
+											Us</a></li>
+									<li class="mb-2"><a href="#products" class="footer-link">Products</a></li>
+									<li class="mb-2"><a href="#contact" class="footer-link">Contact</a></li>
+								</ul>
+							</div>
+
+							<!-- Contact -->
+							<div class="col-md-4">
+								<h5 class="fw-bold mb-3">Contact Us</h5>
+								<p class="small mb-1">
+									<i class="fas fa-map-marker-alt me-2"></i> Lucknow, Uttar
+									Pradesh, India
+								</p>
+								<p class="small mb-1">
+									<i class="fas fa-phone-alt me-2"></i> +91 1234567890
+								</p>
+								<p class="small">
+									<i class="fas fa-envelope me-2"></i> support@agritradehub.com
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Bottom Strip -->
+					<div class="text-center py-3"
+						style="background-color: #0f3d24; font-size: 0.85rem;">©
+						2025 Agritrade Hub. All rights reserved.</div>
+				</footer>
+
+				<!-- Footer CSS -->
+				<style>
+.footer-link {
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+	color: #ffc107;
+}
+
+.social-icon {
+	font-size: 1.1rem;
+	background: rgba(255, 255, 255, 0.1);
+	padding: 8px;
+	border-radius: 50%;
+	transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+	background: #ffc107;
+	color: #14532d !important;
+	transform: scale(1.1);
+}
+</style>
+
+
+
+
+				<style>
+/* ===== REGISTRATION DROPDOWN (PREMIUM) ===== */
+.navbar .dropdown-menu {
+	border: none;
+	border-radius: 12px;
+	padding: 8px 0;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+	animation: dropdownFade 0.25s ease;
+}
+
+/* Dropdown animation */
+@
+keyframes dropdownFade {from { opacity:0;
+	transform: translateY(10px);
+}
+
+to {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+}
+
+/* Dropdown items */
+.navbar .dropdown-item {
+	font-weight: 500;
+	padding: 10px 22px;
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Hover effect */
+.navbar .dropdown-item:hover {
+	background: linear-gradient(135deg, #14532d, #1f7a45);
+	color: #fff;
+	padding-left: 28px;
+}
+
+/* Small icon inside dropdown (optional) */
+.navbar .dropdown-item i {
+	font-size: 0.9rem;
+	color: #14532d;
+	transition: color 0.3s ease;
+}
+
+.navbar .dropdown-item:hover i {
+	color: #ffc107;
+}
+</style>
+
+
+
+
+				<!-- FontAwesome for Icons -->
+				<script src="https://kit.fontawesome.com/a076d05399.js"
+					crossorigin="anonymous"></script>
+
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" id="msg" th:if="${msg}" th:value="${msg}">
+	<script type="text/javascript">
+		var msg = document.getElementById("msg");
+		if (msg.value != "") {
+			alert(msg.value);
+		}
+	</script>
+
+
+	<!-- AOS JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+	<script>
+		AOS.init({
+			duration : 1000,
+			once : true
+		});
+	</script>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>
